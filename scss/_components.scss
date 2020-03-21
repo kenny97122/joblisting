@@ -1,0 +1,128 @@
+@import 'variables';
+.job {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 15px 3px rgba($primary-color, $alpha: .3);
+    padding: 2.5rem;
+    border-radius: 5px;
+    border-left: 4px solid transparent;
+    margin-bottom: 2.5rem;
+    background-color: $white;
+    &:hover{
+        border-left: 4px solid $primary-color;
+    }
+
+    &-info {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        color: $primary-color;
+
+
+        &__box{
+
+            margin-left: 2rem;
+            &__top {
+                
+                &__company-name {
+                    font-weight: bold;
+                }
+                .tag-round {
+                    margin-left: .5rem;
+                    padding-top: .7rem;
+                }
+             }
+
+             &__job-title {
+                 color:$black ;
+                 font-size: 1.7rem;
+                 margin: .8rem 0;
+                 display: inline-block;
+                 font-weight: bold;
+                 &:hover {
+                     color: $primary-color;
+                 }
+             }
+
+             &__bottom {
+                 color: $dark-gray-cyan;
+                 display: flex;
+                 justify-content: space-between;
+                 align-items: center;
+                &__date,&__time {
+                 position: relative;
+                margin-right: 2rem;
+                 &::after {
+                     position: absolute;
+                     content: '';
+                     width: 5px;
+                     height: 5px;
+                     background-color:$dark-gray-cyan ;
+                     border-radius: 50%;
+                     right: -20%;
+                     top: 30%;
+                 }
+             }
+                }
+             
+        }
+        
+    }
+
+    .tags {
+        .tag {
+           
+                margin-right: 2rem;
+            
+           
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .job {
+        &-info {
+            margin-right: 1rem;
+        }
+        
+      .tags {
+        .tag {
+            margin-bottom: 1rem;
+        }
+      }
+    }
+}
+@media (max-width: 768px) {
+    .job {
+        flex-direction: column;
+        padding: 2rem;
+        margin-bottom: 5rem;
+        &-info {
+            padding: 2rem 0;
+            width: 100%;
+            position: relative;
+            border-bottom: 1px solid rgb(197, 197, 197);
+            margin-bottom: 1rem;
+            &__box {
+                margin: 0;
+            }
+             &__box__job-title {
+                  margin: 1.5rem 0;
+             }
+            &__img-container {
+                position: absolute;
+                width: 50px;
+                top: -38%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .tags {
+            width: 100%;
+            margin-top: 1rem;
+        }
+    }
+}
